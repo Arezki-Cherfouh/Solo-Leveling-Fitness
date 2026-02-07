@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "Solo Leveling: Arise",
+    "slug": "Solo-Leveling",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "scheme": "sololeveling",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "icon": "./assets/images/logo.png",
+      "supportsTablet": true,
+      "UIBackgroundModes": [
+        "audio",
+        "audio"
+      ],
+      "bundleIdentifier": "com.arezkicherfouh.SoloLeveling"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/1x1-px.png",
+        "backgroundImage": "./assets/images/logo.png"
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.arezkicherfouh.SoloLeveling"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/logo.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#050714"
+        }
+      ],
+      "expo-audio"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "0bedc35e-f2ec-48d3-b79a-4d073ed729a4"
+      }
+    },
+    "owner": "arezki-cherfouh"
+  }
+}
