@@ -1,15 +1,18 @@
-import { FontAwesome5, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import Slider from '@react-native-community/slider';
-import { Audio } from 'expo-av';
-import { CameraView, useCameraPermissions } from 'expo-camera';
-import * as DocumentPicker from 'expo-document-picker';
-import * as ImagePicker from 'expo-image-picker';
-import React, { useEffect, useRef, useState } from 'react';
+import {
+  FontAwesome5,
+  Ionicons,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import Slider from "@react-native-community/slider";
+import { Audio } from "expo-av";
+import { CameraView, useCameraPermissions } from "expo-camera";
+import * as DocumentPicker from "expo-document-picker";
+import * as ImagePicker from "expo-image-picker";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Animated,
   BackHandler,
-  Dimensions,
   Image,
   Modal,
   ScrollView,
@@ -20,13 +23,9 @@ import {
   TouchableOpacity,
   Vibration,
   View
-} from 'react-native';
-import { LineChart } from 'react-native-chart-kit';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-
-const { width, height } = Dimensions.get('window');
-
-// --- Type Definitions ---
+} from "react-native";
+import { LineChart } from "react-native-chart-kit";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 type GoalType = 'muscle' | 'weight_loss' | 'speed_strength';
 
 interface UserData {
@@ -905,7 +904,8 @@ function AssessmentScreen({ userData, onComplete }: { userData: UserData, onComp
 
 function DashboardScreen({ userData, onNavigate, onStartQuest }: any) {
   if (!userData) return null;
-  const xpPercent = (userData.xp / (userData.level * XP_PER_LEVEL_BASE)) * 100;
+  // const xpPercent = (userData.xp / (userData.level * XP_PER_LEVEL_BASE)) * 100;
+  const xpPercent = (Math.max(0, userData.xp) / (userData.level * XP_PER_LEVEL_BASE)) * 100;
   return (
     <ScrollView style={styles.screenContainer} showsVerticalScrollIndicator={false}>
       <View style={styles.dashboardHeader}>
